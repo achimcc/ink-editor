@@ -1,6 +1,8 @@
+/.bundle
+/vendor
 /target
-**/*.rs.bk
-Cargo.lock
-bin/
-pkg/
-wasm-pack.log
+/_site
+.sass-cache
+.jekyll-cache
+.vscode
+*.log
