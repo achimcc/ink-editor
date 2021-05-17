@@ -1,7 +1,7 @@
 [package]
 name = "ink_editor"
 version = "0.1.0"
-authors = ["rust-analyzer developers"]
+authors = ["[Achim Schneider] <[achim.schneider@posteo.de]>"]
 edition = "2018"
 
 [lib]
@@ -9,6 +9,7 @@ crate-type = ["cdylib"]
 
 [features]
 dev = ["console_error_panic_hook"]
+ink-as-dependency = []
 
 [dependencies]
 console_error_panic_hook = { version = "0.1.6", optional = true }
@@ -23,3 +24,15 @@ wasm-bindgen-rayon = "1.0.2"
 
 ide = { version = "0.0.44", package = "ra_ap_ide" }
 ide_db = { version = "0.0.44", package = "ra_ap_ide_db" }
+
+ink_primitives = { version = "3.0.0-rc3", default-features = false }
+ink_metadata = { version = "3.0.0-rc3", default-features = false, features = ["derive"], optional = true }
+ink_env = { version = "3.0.0-rc3", default-features = false }
+ink_storage = { version = "3.0.0-rc3", default-features = false }
+ink_lang = { version = "3.0.0-rc3", default-features = false }
+
+scale = { package = "parity-scale-codec", version = "2.0.1", default-features = false, features = ["derive"] }
+scale-info = { version = "0.6.0", default-features = false, features = ["derive"], optional = true }
+
+# Should be removed once bitvecto-rs/bitvec#105 is resolved
+funty = "=1.1.0"
